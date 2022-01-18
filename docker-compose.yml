@@ -2,7 +2,7 @@ version: '2.2'
 services:
   logstash:
     container_name: logstash
-    image: docker.elastic.co/logstash/logstash:6.7.0
+    image: docker.elastic.co/logstash/logstash:${ELASTIC_STACK_VERSION}
     ports:
       - 5044:5044
     environment:
@@ -22,14 +22,14 @@ services:
     networks:
       - esnet
   kibana:
-    image: docker.elastic.co/kibana/kibana:6.7.0
+    image: docker.elastic.co/kibana/kibana:${ELASTIC_STACK_VERSION}
     ports:
       - 5601:5601
     networks:
       - esnet
   elasticsearch:
     container_name: elasticsearch
-    image: docker.elastic.co/elasticsearch/elasticsearch:6.7.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:${ELASTIC_STACK_VERSION}
     ports:
       - 9200:9200
       - 9300:9300
