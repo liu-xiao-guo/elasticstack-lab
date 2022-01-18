@@ -2,7 +2,7 @@
 
 This project will provide you an easy way to learn and play with elasticstack and in particular with logstash and filebeat configurations.
 
-Project runs filebeat,logstash,elasticsearch and kibana. All with version 6.7.
+Project runs filebeat,logstash,elasticsearch and kibana. All with version ${ELASTIC_STACK_VERSION}. ELASTIC_STACK_VERSION can be defined in .env file.
 It provides entry points for configuring filebeat and logstash conf files.
 
 So you can play and create grok patterns easily, change filebeat configurations and do whatever you want without need of installing all the components separately.
@@ -21,7 +21,12 @@ https://docs.docker.com/install/
 You need to clone this repo to any path at your local machine
 
 ```
-git clone https://github.com/moryachok/elasticstack-lab.git
+git clone https://github.com/liu-xiao-guo/elasticstack-lab
+```
+
+Change the .env file to select the right Elastic Stack version.
+```
+ELASTIC_STACK_VERSION=7.16.2
 ```
 
 Now run docker-compose in order to build the stack. On first build it may take some time to get all the required images.
